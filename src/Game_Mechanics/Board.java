@@ -13,9 +13,13 @@ public class Board {
     }
 
     public void display(){
-        for (int i = 0; i < board.length; i++) {
-            for(Symbol symb: board[i]){
-                System.out.printf("%s ",symb);
+        for (Symbol[] symbols : board) {
+            System.out.print("|");
+            for (Symbol symb : symbols) {
+                if (symb == null)
+                    System.out.print("   |");
+                else
+                    System.out.printf(" %s |", symb);
             }
             System.out.println();
         }
