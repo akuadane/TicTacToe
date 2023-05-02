@@ -22,7 +22,8 @@ public class Game {
     public void play() {
 
         Position move= null;
-        while(!board.isGameOver()){
+
+        while(board.shouldContinueGame()){
             board.display();
             try{
                 if(turn.equals(Symbol.X)){
@@ -39,6 +40,13 @@ public class Game {
 
 
         }
+
+        Symbol winner = board.winner();
+
+        if(winner==null)
+            System.out.println("That was a tie.");
+        else
+            System.out.printf("Player %d\n has won.",(winner==Symbol.X)?1:2);
 
 
     }
