@@ -46,7 +46,7 @@ public class Board {
             return board[0][0];
         else if(board[0][0]!=null && board[0][0].equals(board[1][1]) && board[0][0].equals(board[2][2]))
             return board[0][0];
-        else if(board[0][1]!=null && board[0][1].equals(board[1][1]) && board[0][1].equals(board[1][2]))
+        else if(board[0][1]!=null && board[0][1].equals(board[1][1]) && board[0][1].equals(board[2][1]))
             return board[0][1];
         else if(board[0][2]!=null && board[0][2].equals(board[1][1]) && board[0][2].equals(board[2][0]))
             return board[0][2];
