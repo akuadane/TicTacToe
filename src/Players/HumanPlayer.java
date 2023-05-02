@@ -15,6 +15,10 @@ public class HumanPlayer extends Player{
         this.name = name;
         this.scanner = new Scanner(System.in);
     }
+    public HumanPlayer(String name,Symbol turn){
+        this(name);
+       this.turn = turn;
+    }
     @Override
     public Position selectMove(Board b) throws InvalidMove {
 

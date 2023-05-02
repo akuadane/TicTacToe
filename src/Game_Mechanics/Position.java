@@ -21,4 +21,9 @@ public class Position {
     public int getR() {
         return r;
     }
+
+    @Override
+    public String toString() {
+        return String.format("R: %d, C: %d",r,c);
+    }
 }

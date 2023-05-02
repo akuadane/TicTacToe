@@ -3,6 +3,9 @@ package Game_Mechanics;
 import Exceptions.InvalidMove;
 import Players.Symbol;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Board {
     private Symbol[][] board;
 
@@ -75,6 +78,16 @@ public class Board {
 
         return hasEmptySquare && winner()==null;
 
+    }
+
+    public List<Position> getFreeSquares() throws InvalidMove {
+        List<Position> freeSquares = new ArrayList<>();
+        for(int i=0;i< board.length;i++)
+            for(int j=0;j< board.length;j++)
+                if(board[i][j]==null)
+                    freeSquares.add(new Position(i,j));
+
+        return freeSquares;
     }
     public Symbol getPiece(Position pos){
         return board[pos.getR()][pos.getC()];

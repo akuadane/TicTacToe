@@ -33,6 +33,7 @@ public class Game {
                 }
                 board.makeMove(move,turn);
                 turn = (turn==Symbol.X)? Symbol.O : Symbol.X;
+                System.out.printf("%s moved to %s\n",turn,move);
             }catch (InvalidMove e){
                 System.out.println(e.getMessage());
                 System.out.println("Please try again!");
@@ -40,13 +41,13 @@ public class Game {
 
 
         }
-
+        board.display();
         Symbol winner = board.winner();
 
         if(winner==null)
             System.out.println("That was a tie.");
         else
-            System.out.printf("Player %d\n has won.",(winner==Symbol.X)?1:2);
+            System.out.printf("Player %d has won.\n",(winner==Symbol.X)?1:2);
 
 
     }
