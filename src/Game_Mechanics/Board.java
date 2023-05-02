@@ -5,11 +5,11 @@ import Players.Symbol;
 
 public class Board {
     private Symbol[][] board;
-    private Symbol turn;
+
 
     public Board() {
         this.board = new Symbol[3][3];
-        this.turn = Symbol.X;
+
     }
 
     public void display() {
@@ -25,14 +25,18 @@ public class Board {
         }
     }
 
-    public void makeMove(Position mv) throws InvalidMove {
+    public void makeMove(Position mv,Symbol turn) throws InvalidMove {
         int r = mv.getR(), c = mv.getC();
 
         if (board[r][c] != null)
             throw new InvalidMove("Square already occupied."); // check if the square is empty
 
         board[r][c] = turn;
-        turn = (turn == Symbol.O) ? Symbol.X : Symbol.O; // Changes the turn after making a move
+
+    }
+
+    public boolean isGameOver(){
+        return false; // TODO implement this method
     }
 
     public Symbol getPiece(Position pos){

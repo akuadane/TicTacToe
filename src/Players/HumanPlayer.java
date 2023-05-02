@@ -18,7 +18,7 @@ public class HumanPlayer extends Player{
     @Override
     public Position selectMove(Board b) throws InvalidMove {
 
-        System.out.println("> ");
+        System.out.print("> ");
         int square = scanner.nextInt();
         int r = square/3;
         int c = square%3;
